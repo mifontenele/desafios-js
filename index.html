@@ -23,11 +23,12 @@
         <input type="number" id="lado3"><br>
 
         <!-- botão que vai executar a ação e dar a resultado -->
-        <button onclick="checkTriangle()">Verificar</button>
+        <button onclick="triangulo()">Verificar</button>
 
         <!-- parágrafo que vai conter o resultado. -->
 
-        <!-- criando as imagens dos triângulos a serem exibidos -->
+        <!-- criando as imagens dos triângulos a serem exibidos 
+        ABRIR ISSUE pra este ponto: não consegui ainda substituir a figura pelas imagens dos SRC's abaixo-->
         <div class="triangulo-container">
             <div class="triangulo equilatero">
                 <img src="./assets/equilatero.png" alt="Triângulo Equilátero" style="display: none;">
@@ -44,7 +45,7 @@
 
     <script>
         // função para ser executada quando o elemento <button> for acionado
-        function checkTriangle() {
+        function triangulo() {
             /* ParseFloat: converte para valor numérico (decimal) as entradas (<inputs>) com id's informados 
             Value: possibilita efetuar os cálculos que serão feitos para validar o triângulo */
             let lado1 = parseFloat(document.getElementById("lado1").value);
@@ -56,38 +57,37 @@
 
                 // verificando se o triângulo é equilátero
                 if (lado1 === lado2 && lado2 === lado3) {
-                    /* Definindo o elemento no doc html com o id "result" onde desejo exibir o resultado do tipo
+                    /* Definindo o elemento no doc html com o id "resultado" onde desejo exibir o resultado do tipo
                     de triâmgulo. No caso deste código, o resultado virá no elemento <p>
                     O "innerHTML" é a propriedade que permite acessar e modificar, no caso o <p>, para exibir o 
                     resultado de acordo com o input realizado */
                     document.getElementById("resultado").innerHTML = "O triângulo é Equilátero";
                     console.log(`O triângulo é Equilátero`);
                     // chama a função  
-                    hideTriangle();
-                    /* 
-                    document.querySelector(".equilatero") : seleciona o elemento com a classe "equilatero".
+                    ocultTriangulo();
+                    /* document.querySelector(".equilatero") : seleciona o elemento com a classe "equilatero".
                     .style.display = "block" : após selecionar exibir o resultado no display "block" */
                     document.querySelector(".equilatero").style.display = "block";
 
                 } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
                     document.getElementById("resultado").innerHTML = "O triângulo é Isósceles";
                     console.log(`O triângulo é Isósceles`);
-                    hideTriangle();
+                    ocultTriangulo();
                     document.querySelector(".isosceles").style.display = "block";
 
                 } else {
                     // nenhuma das anteriores foi atendida, a alternativa será escaleno 
                     document.getElementById("resultado").innerHTML = "O triângulo é Escaleno";
                     console.log(`O triângulo é Escaleno`);
-                    hideTriangle();
-                    document.querySelector(".escaleno").style.display = "block";
+                    ocultTriangulo();
+                    document.querySelector("escaleno").style.display = "block";
                 }
             }
             // Em caso de falso no teste do 1º if para ver se as medidas foram um triângulo...  
             else {
                 document.getElementById("resultado").innerHTML = "Medidas inválidas para formar um triângulo";
                 console.log(`Medidas inválidas para formar um triângulo`);
-                hideTriangle();
+                ocultTriangulo();
             }
         }
         /* A função ocultTriangulo é chamada depois da função triangulo ser realizada para deixar visível apenas o
