@@ -63,7 +63,11 @@
                     document.getElementById("resultado").innerHTML = "O triângulo é Equilátero";
                     console.log(`O triângulo é Equilátero`);
                     // chama a função  
+<<<<<<< HEAD
                     ocultTriangulo();
+=======
+                    hideTriangle();
+>>>>>>> beb39af7a2eb685697f65fed5f3831c5c5547c22
                     /* 
                     document.querySelector(".equilatero") : seleciona o elemento com a classe "equilatero".
                     .style.display = "block" : após selecionar exibir o resultado no display "block" */
@@ -72,14 +76,22 @@
                 } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
                     document.getElementById("resultado").innerHTML = "O triângulo é Isósceles";
                     console.log(`O triângulo é Isósceles`);
+<<<<<<< HEAD
                     ocultTriangulo();
+=======
+                    hideTriangle();
+>>>>>>> beb39af7a2eb685697f65fed5f3831c5c5547c22
                     document.querySelector(".isosceles").style.display = "block";
 
                 } else {
                     // nenhuma das anteriores foi atendida, a alternativa será escaleno 
                     document.getElementById("resultado").innerHTML = "O triângulo é Escaleno";
                     console.log(`O triângulo é Escaleno`);
+<<<<<<< HEAD
                     ocultTriangulo();
+=======
+                    hideTriangle();
+>>>>>>> beb39af7a2eb685697f65fed5f3831c5c5547c22
                     document.querySelector(".escaleno").style.display = "block";
                 }
             }
@@ -87,7 +99,11 @@
             else {
                 document.getElementById("resultado").innerHTML = "Medidas inválidas para formar um triângulo";
                 console.log(`Medidas inválidas para formar um triângulo`);
+<<<<<<< HEAD
                 ocultTriangulo();
+=======
+                hideTriangle();
+>>>>>>> beb39af7a2eb685697f65fed5f3831c5c5547c22
             }
         }
         /* A função ocultTriangulo é chamada depois da função triangulo ser realizada para deixar visível apenas o
