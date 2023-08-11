@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02: Triângulos</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tipos de Triângulos</h2>
+        <p>Insira as três medidas abaixo:</p>
+
+        <label for="lado1">Lado 1:</label>
+        <input type="number" id="lado1"><br>
+
+        <label for="lado2">Lado 2:</label>
+        <input type="number" id="lado2"><br>
+
+        <label for="lado3">Lado 3:</label>
+        <input type="number" id="lado3"><br>
+
+        <!-- botão que vai executar a ação e dar a resultado -->
+        <button onclick="checkTriangle()">Verificar</button>
+
+        <!-- parágrafo que vai conter o resultado. -->
+
+        <!-- criando as imagens dos triângulos a serem exibidos -->
+        <div class="triangulo-container">
+            <div class="triangulo equilatero">
+                <img src="./assets/equilatero.png" alt="Triângulo Equilátero" style="display: none;">
+            </div>
+            <div class="triangulo isosceles">
+                <img src="./assets/isosceles.png" alt="Triângulo Isósceles" style="display: none;">
+            </div>
+            <div class="triangulo escaleno">
+                <img src="./assets/escaleno.png.png" alt="Triângulo Escaleno" style="display: none;">
+            </div>
+        </div>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        // função para ser executada quando o elemento <button> for acionado
+        function checkTriangle() {
+            /* ParseFloat: converte para valor numérico (decimal) as entradas (<inputs>) com id's informados 
+            Value: possibilita efetuar os cálculos que serão feitos para validar o triângulo */
+            let lado1 = parseFloat(document.getElementById("lado1").value);
+            let lado2 = parseFloat(document.getElementById("lado2").value);
+            let lado3 = parseFloat(document.getElementById("lado3").value);
+
+            // verificando se as medidas informadas formam um triângulo
+            if (lado1 > 0 && lado2 > 0 && lado3 > 0 && lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado3 + lado1 > lado2) {
+
+                // verificando se o triângulo é equilátero
+                if (lado1 === lado2 && lado2 === lado3) {
+                    /* Definindo o elemento no doc html com o id "result" onde desejo exibir o resultado do tipo
+                    de triâmgulo. No caso deste código, o resultado virá no elemento <p>
+                    O "innerHTML" é a propriedade que permite acessar e modificar, no caso o <p>, para exibir o 
+                    resultado de acordo com o input realizado */
+                    document.getElementById("resultado").innerHTML = "O triângulo é Equilátero";
+                    console.log(`O triângulo é Equilátero`);
+                    // chama a função  
+                    hideTriangles();
+                    /* 
+                    document.querySelector(".equilatero") : seleciona o elemento com a classe "equilatero".
+                    .style.display = "block" : após selecionar exibir o resultado no display "block" */
+                    document.querySelector(".equilatero").style.display = "block";
+
+                } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+                    document.getElementById("resultado").innerHTML = "O triângulo é Isósceles";
+                    console.log(`O triângulo é Isósceles`);
+                    hideTriangles();
+                    document.querySelector(".isosceles").style.display = "block";
+
+                } else {
+                    // nenhuma das anteriores foi atendida, a alternativa será escaleno 
+                    document.getElementById("resultado").innerHTML = "O triângulo é Escaleno";
+                    console.log(`O triângulo é Escaleno`);
+                    hideTriangles();
+                    document.querySelector(".escaleno").style.display = "block";
+                }
+            }
+            // Em caso de falso no teste do 1º if para ver se as medidas foram um triângulo...  
+            else {
+                document.getElementById("resultado").innerHTML = "Medidas inválidas para formar um triângulo";
+                console.log(`Medidas inválidas para formar um triângulo`);
+                hideTriangles();
+            }
+        }
+        /* A função hideTriangles é chamada depois da função checkTriangle ser realizada para deixar visível apenas o
+        triângulo correspondente ao resultado
+        O style.display = "none" : torna os triângulos invisíveis ao usuário   */
+        function hideTriangles() {
+            document.querySelector(".equilatero").style.display = "none";
+            document.querySelector(".isosceles").style.display = "none";
+            document.querySelector(".escaleno").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
