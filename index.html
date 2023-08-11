@@ -23,7 +23,7 @@
         <input type="number" id="lado3"><br>
 
         <!-- botão que vai executar a ação e dar a resultado -->
-        <button onclick="triangulo()">Verificar</button>
+        <button onclick="checkTriangle()">Verificar</button>
 
         <!-- parágrafo que vai conter o resultado. -->
 
@@ -44,7 +44,7 @@
 
     <script>
         // função para ser executada quando o elemento <button> for acionado
-        function triangulo() {
+        function checkTriangle() {
             /* ParseFloat: converte para valor numérico (decimal) as entradas (<inputs>) com id's informados 
             Value: possibilita efetuar os cálculos que serão feitos para validar o triângulo */
             let lado1 = parseFloat(document.getElementById("lado1").value);
@@ -63,7 +63,7 @@
                     document.getElementById("resultado").innerHTML = "O triângulo é Equilátero";
                     console.log(`O triângulo é Equilátero`);
                     // chama a função  
-                    ocultTriangulo();
+                    hideTriangle();
                     /* 
                     document.querySelector(".equilatero") : seleciona o elemento com a classe "equilatero".
                     .style.display = "block" : após selecionar exibir o resultado no display "block" */
@@ -72,14 +72,14 @@
                 } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
                     document.getElementById("resultado").innerHTML = "O triângulo é Isósceles";
                     console.log(`O triângulo é Isósceles`);
-                    ocultTriangulo();
+                    hideTriangle();
                     document.querySelector(".isosceles").style.display = "block";
 
                 } else {
                     // nenhuma das anteriores foi atendida, a alternativa será escaleno 
                     document.getElementById("resultado").innerHTML = "O triângulo é Escaleno";
                     console.log(`O triângulo é Escaleno`);
-                    ocultTriangulo();
+                    hideTriangle();
                     document.querySelector(".escaleno").style.display = "block";
                 }
             }
@@ -87,7 +87,7 @@
             else {
                 document.getElementById("resultado").innerHTML = "Medidas inválidas para formar um triângulo";
                 console.log(`Medidas inválidas para formar um triângulo`);
-                ocultTriangulo();
+                hideTriangle();
             }
         }
         /* A função ocultTriangulo é chamada depois da função triangulo ser realizada para deixar visível apenas o
