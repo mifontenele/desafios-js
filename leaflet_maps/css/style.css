@@ -56,11 +56,6 @@ p#resultado {
     font-weight: bold;
 }
 
-footer{
-    margin-top: 15px;
-    color: darkslategrey;    
-}
-
 /* habilitar display flex no container das figuras/imagens */
 .triangulo-container {
     display: flex;
