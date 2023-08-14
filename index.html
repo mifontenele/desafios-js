@@ -30,14 +30,14 @@
         <!-- criando as imagens dos triângulos a serem exibidos 
         ABRIR ISSUE pra este ponto: não consegui ainda substituir a figura pelas imagens dos SRC's abaixo-->
         <div class="triangulo-container">
-            <div class="triangulo equilatero">
-                <img src="./assets/equilatero.png" alt="Triângulo Equilátero" style="display: none;">
+            <div class="equilatero">
+                <img src="./assets/equilatero.png" alt="Triângulo Equilátero" style="display: block;">
             </div>
-            <div class="triangulo isosceles">
-                <img src="./assets/isosceles.png" alt="Triângulo Isósceles" style="display: none;">
+            <div class="isosceles">
+                <img src="./assets/isosceles.png" alt="Triângulo Isósceles" style="display: block;">
             </div>
-            <div class="triangulo escaleno">
-                <img src="./assets/escaleno.png.png" alt="Triângulo Escaleno" style="display: none;">
+            <div class="escaleno">
+                <img src="./assets/escaleno.png" alt="Triângulo Escaleno" style="display: block;">
             </div>
         </div>
         <p id="resultado"></p>
@@ -80,7 +80,7 @@
                     document.getElementById("resultado").innerHTML = "O triângulo é Escaleno";
                     console.log(`O triângulo é Escaleno`);
                     ocultTriangulo();
-                    document.querySelector("escaleno").style.display = "block";
+                    document.querySelector(".escaleno").style.display = "block";
                 }
             }
             // Em caso de falso no teste do 1º if para ver se as medidas foram um triângulo...  
