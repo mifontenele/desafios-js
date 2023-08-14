@@ -62,33 +62,33 @@ p#resultado {
     justify-content: space-around;
     margin-top: 20px;
 }
-
+/* 
 /* para todos */
-.triangulo {
+/* .triangulo {
     width: 0;
     height: 0;
     margin-top: 20px;
-}
+}  */
 
 /* estilo para triangulo equilatero */
-.equilatero {
+/* .equilatero {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid #6fcf97;
-}
+} */
 
 /* estilo para triangulo isósceles */
-.isosceles {
+/* .isosceles {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid #f9ca24;
-}
+} */
 
 /* estilo para triangulo escaleno */
-.escaleno {
+/* .escaleno {
     width: 0;
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid #eb4d4b;
-}
+} */
